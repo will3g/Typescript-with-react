@@ -1,8 +1,11 @@
 //import { IMailTo, ImailMessage, IMessageDTO } from '../interfaces/interfaces';
 //import IMessageDTO from '../interfaces/interfaces'; // Assim estamos exportando todas as interfaces
-import { IMessageDTO } from '../interfaces/interfaces'; // Assim estamos exportando somente IMessageDTO
+//import { IMessageDTO } from '../interfaces/interfaces'; // Assim estamos exportando somente IMessageDTO
+//import IRuleEmailService, { IMessageDTO } from '../interfaces/interfaces';
+import { IRuleEmailService, IMessageDTO } from '../interfaces/interfaces';
 
-class EmailService {
+// IRuleEmailService está obrigando a classe EmailService ter o método sendEmail() criado
+class EmailService implements IRuleEmailService {
 
     username: string;
     email: string;
@@ -12,7 +15,7 @@ class EmailService {
         this.email = email;
     }
 
-    sendMail({to, message}: IMessageDTO) {
+    sendEmail({to, message}: IMessageDTO) {
         console.log(`
             Email enviado pelo usuário ${this.username}, email ${this.email} 
             para o email ${to.email}, com o assunto: ${message.subject} 

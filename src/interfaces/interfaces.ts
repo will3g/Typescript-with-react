@@ -16,12 +16,18 @@ interface IMessageDTO { // DTO => Data Transfer Object
     message: ImailMessage
 }
 
+interface IRuleEmailService { // Seria tipo uma classe estática, que tem funções
+    // que devem ser obrigatoriamente implementadas na classe herdeira
+    sendEmail(request: IMessageDTO): void;
+}
+
 // Exportando de forma desestruturada
 export {
     IMailTo,
     ImailMessage,
-    IMessageDTO
+    IMessageDTO,
+    IRuleEmailService
 }
 
 // Exportando de forma padrão (todas as interfaces)
-export default IMessageDTO;
+export default IRuleEmailService;
