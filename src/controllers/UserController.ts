@@ -35,13 +35,14 @@ export default {
     async create(req: Request, res: Response) {
         const emailservice = new EmailService(usersList[1].username, usersList[1].email);
 
-        const response = emailservice.sendMail(
-            usersList[0],
-            {// Mensagem
+        const response = emailservice.sendMail({
+            // Criamos a regrinha IMessageDTO para não confundir os parametros
+            to: usersList[0],
+            message: {
                 subject: 'Happy hour',
                 body: 'Bora ir no pasteco meo?'
             }
-        );
+        });
 
         return res.json(response);
     }

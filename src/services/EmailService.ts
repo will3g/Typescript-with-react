@@ -1,14 +1,6 @@
-interface IMailTo {
-    username: string,
-    email: string
-}
-
-interface ImailMessage {
-    subject: string,
-    body: string,
-    //attachment? pq não sabemos se vai ter anexo ou não na mensagem
-    attachment?: Array<string> // ou string[]
-}
+//import { IMailTo, ImailMessage, IMessageDTO } from '../interfaces/interfaces';
+//import IMessageDTO from '../interfaces/interfaces'; // Assim estamos exportando todas as interfaces
+import { IMessageDTO } from '../interfaces/interfaces'; // Assim estamos exportando somente IMessageDTO
 
 class EmailService {
 
@@ -20,7 +12,7 @@ class EmailService {
         this.email = email;
     }
 
-    sendMail(to: IMailTo, message: ImailMessage) {
+    sendMail({to, message}: IMessageDTO) {
         console.log(`
             Email enviado pelo usuário ${this.username}, email ${this.email} 
             para o email ${to.email}, com o assunto: ${message.subject} 
