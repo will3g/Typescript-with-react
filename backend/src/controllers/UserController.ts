@@ -25,6 +25,10 @@ let usersList = [
     {
         username: setUsername('will3g'),
         email: setEmail('will3g@gmail.com')
+    },
+    {
+        username: setUsername('TS'),
+        email: setEmail('')
     }
 ]
 
