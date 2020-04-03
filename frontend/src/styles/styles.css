@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E8DDCB;
+}
+
+div {
+    display: flex;
+    width: 800px;
+    flex-wrap: wrap;
+    font-size: large;
+    margin: 10vh auto;
+    font-family: sans-serif;
+}
+
+strong {
+    float: left;
+    color: yellow;
+    margin-right: 20px;
+}
+
+p {
+    width: 150px;
+    color: white
+}
+
+.block {
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #384577;
+    border: 1px solid #FCDD7B;
+}
